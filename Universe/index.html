@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Travel Landing Page</title>
+    <!-- Load Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
         
@@ -37,8 +39,8 @@
             text-transform: uppercase;
             cursor: pointer;
             font-size: 2em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 3D effect */
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4); /* Gradient text */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -53,7 +55,7 @@
         }
 
         .toggle:hover {
-            transform: scale(1.1); /* Slight 3D scale on hover */
+            transform: scale(1.1);
         }
 
         .toggle.active {
@@ -77,7 +79,7 @@
         }
 
         .showcase.active {
-            right: 300px; /* Slide effect for menu */
+            right: 300px;
         }
 
         .showcase video {
@@ -96,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255,107,107,0.3), rgba(78,205,196,0.3)); /* Gradient overlay */
+            background: linear-gradient(135deg, rgba(255,107,107,0.3), rgba(78,205,196,0.3));
             mix-blend-mode: overlay;
         }
 
@@ -104,14 +106,13 @@
         .text {
             position: relative;
             z-index: 10;
-            animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
         }
 
         .text h2, .text h3 {
             font-weight: 800;
             color: #fff;
             text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 3D effect */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .text h2 {
@@ -134,7 +135,7 @@
         .text a {
             display: inline-block;
             font-size: 1em;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4); /* Gradient button */
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
             padding: 10px 30px;
             text-transform: uppercase;
             text-decoration: none;
@@ -147,47 +148,40 @@
 
         .text a:hover {
             letter-spacing: 6px;
-            transform: translateY(-5px); /* 3D lift on hover */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Shadow for depth */
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         }
 
         /* Social Links */
         .social {
             position: absolute;
-            z-index: 20; /* Increased to ensure visibility */
+            z-index: 20; /* Ensure it’s above other elements */
             bottom: 20px;
+            left: 100px; /* Align with padding */
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
         }
 
         .social li {
             list-style: none;
             margin-right: 20px;
-            animation: fadeIn 1s ease-out forwards; /* Staggered fade-in */
-            opacity: 0;
         }
-
-        .social li:nth-child(1) { animation-delay: 0.6s; }
-        .social li:nth-child(2) { animation-delay: 0.7s; }
-        .social li:nth-child(3) { animation-delay: 0.8s; }
 
         .social li a {
             display: inline-block;
             transition: transform 0.3s ease;
         }
 
-        .social li a img {
-            width: 40px; /* Increased size for visibility */
-            background: rgba(255,255,255,0.2); /* Subtle background */
-            padding: 10px;
-            border-radius: 50%;
+        .social li a i {
+            font-size: 40px; /* Large size for visibility */
+            color: #ffffff; /* White for contrast against dark background */
             transition: all 0.3s ease;
         }
 
-        .social li a:hover img {
-            transform: translateY(-10px); /* 3D lift on hover */
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Shadow for depth */
+        .social li a:hover i {
+            transform: translateY(-10px); /* Lift effect on hover */
+            color: #4ecdc4; /* Change color on hover */
         }
 
         /* Menu Styling */
@@ -201,7 +195,7 @@
             justify-content: center;
             align-items: center;
             background: #fff;
-            box-shadow: -5px 0 10px rgba(0,0,0,0.3); /* 3D shadow */
+            box-shadow: -5px 0 10px rgba(0,0,0,0.3);
         }
 
         .menu ul li {
@@ -213,33 +207,11 @@
             text-decoration: none;
             font-size: 24px;
             color: #111;
-            position: relative;
             transition: color 0.3s ease;
         }
 
         .menu ul li a:hover {
             color: #03a9f4;
-        }
-
-        .menu ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #03a9f4;
-            transition: width 0.3s ease;
-        }
-
-        .menu ul li a:hover::after {
-            width: 100%; /* Underline effect on hover */
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsiveness */
@@ -249,6 +221,7 @@
             }
             .text h2 { font-size: 3em; }
             .text h3 { font-size: 2em; }
+            .social { left: 40px; }
         }
 
         @media (max-width: 576px) {
@@ -256,9 +229,8 @@
             .text h2 { font-size: 2em; }
             .text h3 { font-size: 1.5em; }
             .text p { font-size: 0.9em; }
-            .menu ul li a { font-size: 20px; }
-            .social li { margin-right: 15px; }
-            .social li a img { width: 30px; }
+            .social { left: 20px; }
+            .social li a i { font-size: 30px; }
         }
     </style>
 </head>
@@ -273,22 +245,22 @@
         <div class="text">
             <h2>Never Stop</h2>
             <h3>Exploring The Space</h3>
-            <p>The Universe is the whole cosmic system of matter and energy of which Earth, and therefore the human race, is a part. Humanity has traveled a long road since societies imagined Earth, the Sun, and the Moon as the main objects of creation, with the rest of the universe being formed almost as an afterthought.</p>
+            <p>The Universe is the whole cosmic system of matter and energy of which Earth, and therefore the human race, is a part.</p>
             <a href="https://exoplanets.nasa.gov/what-is-an-exoplanet/what-is-the-universe/">Explore</a>
         </div>
         <ul class="social">
-            <li><a href="https://m.facebook.com/profile.php/?id=100041870123408"><img src="https://i.ibb.co/x7P24fL/facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://twitter.com/LuckySonicosmos?t=1xP9Sw660lUzHRQpT5yz_g&s=09"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.instagram.com/lucky_sonicosmos/"><img src="https://i.ibb.co/ySwtH4B/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
         </ul>
     </section>
     <div class="menu">
         <ul>
-            <li><a href="https://rajsoni06.github.io/Universe_Cosmos/Universe/index.html">Home</a></li>
-            <li><a href="https://www.universetoday.com/#:~:text=A%20Black%20Hole%20Nibbles%20on,22%20Days%2C%20Slowly%20Consuming%20it&text=Astronomers%20working%20with%20NASA's%20Neil,500%20million%20light%2Dyears%20away.">News</a></li>
-            <li><a href="https://gravitysimulator.org/">Simulator</a></li>
-            <li><a href="https://www.scientificamerican.com/article/the-evolution-of-the-universe/">Article</a></li>
-            <li><a href="https://rajsoni06.github.io/My_Site/My_Site.html">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Simulator</a></li>
+            <li><a href="#">Article</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
 
